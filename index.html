@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ResearchMate helps students plan, organise and develop academic research projects.">
+  <title>ResearchMate | Academic Research Workspace</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">R</span> ResearchMate</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+    <nav id="mainNav"><a href="#workspace">Workspace</a><a href="#toolkit">Research toolkit</a><a href="#ethics">Research ethics</a></nav>
+    <span class="top-label">ACADEMIC WORKSPACE</span>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">THINK CLEARLY · RESEARCH RESPONSIBLY</p>
+        <h1>Turn your research<br><span>ideas into action.</span></h1>
+        <p class="hero-text">A guided workspace to shape research questions, plan your methodology, organise literature and move your academic project forward.</p>
+        <div class="hero-actions"><a href="#workspace" class="primary-btn">Open my workspace <span>→</span></a><a href="#toolkit" class="quiet-link">Explore research tools</a></div>
+        <p class="hero-note">✦ Built for students, scholars and early-career researchers</p>
+      </div>
+      <div class="hero-art"><div class="art-ring ring-a"></div><div class="art-ring ring-b"></div><div class="research-paper"><div class="paper-symbol">⌕</div><small>RESEARCH NOTES</small><b>Ask better<br>questions.</b><i></i><i></i><i></i><span>IDEA → INQUIRY → INSIGHT</span></div><div class="floating-tag tag-a">📚 Literature</div><div class="floating-tag tag-b">✍️ Research design</div></div>
+    </section>
+
+    <section class="workspace" id="workspace">
+      <div class="section-head"><div><p class="eyebrow">YOUR RESEARCH DESK</p><h2>Project workspace</h2><p class="muted">Start with a working title. You can refine it as your thinking develops.</p></div><span class="workspace-badge">LOCAL WORKSPACE</span></div>
+      <div class="workspace-grid">
+        <form class="project-form panel" id="projectForm">
+          <h3>Research project details</h3>
+          <label for="projectTitle">Working research title</label><input id="projectTitle" required maxlength="140" placeholder="e.g. Gamification and financial literacy among pre-service teachers">
+          <label for="researchArea">Research area</label><select id="researchArea"><option>Education</option><option>Teacher Education</option><option>Educational Technology</option><option>Psychology</option><option>Social Sciences</option><option>Other</option></select>
+          <label for="researchStage">Current research stage</label><select id="researchStage"><option>Exploring an idea</option><option>Developing research questions</option><option>Reviewing literature</option><option>Planning methodology</option><option>Collecting data</option><option>Analysing data</option><option>Writing the report</option></select>
+          <button class="primary-btn" type="submit">Save project details →</button><p class="helper" id="projectMessage">Saved only in this browser on this device.</p>
+        </form>
+        <div class="panel project-summary"><div class="summary-top"><span class="summary-icon">◈</span><span class="summary-label">CURRENT PROJECT</span></div><h3 id="summaryTitle">Your research title will appear here</h3><p id="summaryArea">Research area: Education</p><div class="stage-pill" id="summaryStage">Exploring an idea</div><div class="summary-bottom"><span>Research planning</span><b id="projectSaved">Not saved yet</b></div></div>
+      </div>
+    </section>
+
+    <section class="toolkit" id="toolkit">
+      <div class="section-head"><div><p class="eyebrow">PLAN · ORGANISE · INVESTIGATE</p><h2>Your research toolkit</h2><p class="muted">Practical guided tools for common stages of an academic project.</p></div></div>
+      <div class="tool-grid">
+        <article class="tool-card"><div class="tool-icon violet">❔</div><span class="tool-kicker">01 · RESEARCH DESIGN</span><h3>Research Question Builder</h3><p>Turn a broad topic into a focused, researchable question.</p><button class="tool-link" data-open="questionModal">Build a question →</button></article>
+        <article class="tool-card"><div class="tool-icon peach">📚</div><span class="tool-kicker">02 · LITERATURE REVIEW</span><h3>Literature Review Matrix</h3><p>Record study details, methods, findings and research gaps.</p><button class="tool-link" data-open="literatureModal">Add a study →</button></article>
+        <article class="tool-card"><div class="tool-icon mint">🧭</div><span class="tool-kicker">03 · METHODOLOGY</span><h3>Methodology Planner</h3><p>Think through approach, design, participants and data sources.</p><button class="tool-link" data-open="methodModal">Plan methodology →</button></article>
+        <article class="tool-card"><div class="tool-icon blue">📝</div><span class="tool-kicker">04 · DATA COLLECTION</span><h3>Questionnaire Planner</h3><p>Draft clear questions and consider how each connects to an objective.</p><button class="tool-link" data-open="surveyModal">Draft questions →</button></article>
+        <article class="tool-card"><div class="tool-icon yellow">📈</div><span class="tool-kicker">05 · DATA ANALYSIS</span><h3>Analysis Learning Guide</h3><p>Understand common quantitative and qualitative analysis pathways.</p><button class="tool-link" data-open="analysisModal">Explore guide →</button></article>
+        <article class="tool-card"><div class="tool-icon rose">🔎</div><span class="tool-kicker">06 · RESEARCH QUALITY</span><h3>Ethics & Quality Checklist</h3><p>Review consent, privacy, credibility and responsible reporting.</p><a class="tool-link" href="#ethics">Open checklist →</a></article>
+      </div>
+    </section>
+
+    <section class="saved-section">
+      <div class="section-head"><div><p class="eyebrow">YOUR RESEARCH RECORDS</p><h2>Workspace library</h2><p class="muted">Your saved literature notes and research questions appear here.</p></div><button class="secondary-btn" id="exportBtn">Export workspace JSON ↓</button></div>
+      <div class="library-grid"><div class="library-panel"><div class="library-heading"><b>Research questions</b><span id="questionCount">0 saved</span></div><div id="questionList" class="record-list"><p class="empty">No research questions saved yet.</p></div></div><div class="library-panel"><div class="library-heading"><b>Literature records</b><span id="literatureCount">0 saved</span></div><div id="literatureList" class="record-list"><p class="empty">No literature records saved yet.</p></div></div></div>
+    </section>
+
+    <section class="ethics-section" id="ethics">
+      <div><p class="eyebrow">RESEARCH WITH INTEGRITY</p><h2>Ethics is part of every research decision.</h2><p>Use this starter checklist as a reminder. Always follow your institution's ethics committee requirements, supervisor guidance and applicable law.</p></div>
+      <div class="ethics-checks" id="ethicsChecks">
+        <label><input type="checkbox"> I will explain the study and obtain informed consent where required.</label>
+        <label><input type="checkbox"> I will protect participant privacy and handle data securely.</label>
+        <label><input type="checkbox"> I will avoid fabrication, falsification and plagiarism.</label>
+        <label><input type="checkbox"> I will seek required institutional ethics approval before data collection.</label>
+        <label><input type="checkbox"> I will report limitations and findings honestly.</label>
+      </div>
+    </section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="#"><span class="brand-mark">R</span> ResearchMate</a><p>Make your research process clearer, more organised and more responsible.</p><small>© 2026 ResearchMate · Academic planning prototype</small></footer>
+
+  <div class="modal-backdrop" id="questionModal" hidden><section class="modal" role="dialog" aria-modal="true" aria-labelledby="questionHeading"><button class="close" data-close>×</button><p class="eyebrow">RESEARCH DESIGN</p><h2 id="questionHeading">Research Question Builder</h2><p class="modal-intro">Use these prompts to narrow your topic. The suggested question is a draft for you to critically refine.</p><form id="questionForm" class="form-stack"><label for="qTopic">Broad topic</label><input id="qTopic" required placeholder="e.g. Gamification in teacher education"><label for="qPopulation">Population or context</label><input id="qPopulation" placeholder="e.g. Pre-service teachers in a college"><label for="qFocus">What do you want to understand?</label><select id="qFocus"><option>Experiences and perceptions</option><option>Effectiveness or outcomes</option><option>Relationship between variables</option><option>Needs, barriers or challenges</option><option>Development and evaluation of an intervention</option></select><button class="primary-btn" type="submit">Create draft question →</button></form><div id="questionOutput" class="output-box" hidden></div></section></div>
+
+  <div class="modal-backdrop" id="literatureModal" hidden><section class="modal" role="dialog" aria-modal="true" aria-labelledby="literatureHeading"><button class="close" data-close>×</button><p class="eyebrow">LITERATURE REVIEW</p><h2 id="literatureHeading">Add a literature record</h2><form id="literatureForm" class="form-stack"><label for="litAuthor">Author(s) and year</label><input id="litAuthor" required placeholder="e.g. Sharma (2023)"><label for="litTitle">Study title</label><input id="litTitle" required placeholder="Title of the article or book"><label for="litMethod">Method / design</label><input id="litMethod" placeholder="e.g. Mixed methods; survey"><label for="litFinding">Key finding or useful note</label><textarea id="litFinding" rows="3" placeholder="Summarise in your own words..."></textarea><label for="litGap">Possible gap / relevance to my study</label><textarea id="litGap" rows="2" placeholder="What does this study not answer?"></textarea><button class="primary-btn" type="submit">Save literature record →</button></form></section></div>
+
+  <div class="modal-backdrop" id="methodModal" hidden><section class="modal" role="dialog" aria-modal="true" aria-labelledby="methodHeading"><button class="close" data-close>×</button><p class="eyebrow">METHODOLOGY PLANNER</p><h2 id="methodHeading">Plan your research methodology</h2><p class="modal-intro">These prompts help you think through design choices. They do not automatically determine the correct method.</p><div class="method-guide"><h3>1. Research approach</h3><p>Quantitative, qualitative or mixed methods — choose based on the research question and the kind of evidence needed.</p><h3>2. Research design</h3><p>Examples include descriptive survey, case study, experiment, correlational study, phenomenology or design-based research.</p><h3>3. Participants and sampling</h3><p>Define the target population, inclusion criteria, sampling strategy and a justified sample size.</p><h3>4. Data sources and instruments</h3><p>Consider questionnaires, interviews, observations, tests, documents or digital learning records.</p><h3>5. Analysis plan</h3><p>Specify how each research question will be addressed and how data quality will be checked.</p></div></section></div>
+
+  <div class="modal-backdrop" id="surveyModal" hidden><section class="modal" role="dialog" aria-modal="true" aria-labelledby="surveyHeading"><button class="close" data-close>×</button><p class="eyebrow">QUESTIONNAIRE PLANNER</p><h2 id="surveyHeading">Draft a questionnaire item</h2><form id="surveyForm" class="form-stack"><label for="surveyObjective">Which objective does this item address?</label><input id="surveyObjective" required placeholder="e.g. To explore student perceptions"><label for="surveyItem">Draft question</label><textarea id="surveyItem" required rows="3" placeholder="Write one clear, neutral question..."></textarea><label for="surveyType">Response format</label><select id="surveyType"><option>5-point agreement scale</option><option>Multiple choice</option><option>Open-ended response</option><option>Frequency scale</option></select><button class="primary-btn" type="submit">Add draft item →</button></form><div id="surveyOutput" class="output-box" hidden></div></section></div>
+
+  <div class="modal-backdrop" id="analysisModal" hidden><section class="modal" role="dialog" aria-modal="true" aria-labelledby="analysisHeading"><button class="close" data-close>×</button><p class="eyebrow">DATA ANALYSIS LEARNING GUIDE</p><h2 id="analysisHeading">Choose an analysis pathway</h2><div class="method-guide"><h3>Quantitative data</h3><p>Begin with data cleaning and descriptive statistics (frequencies, percentages, mean and standard deviation). Depending on the question and assumptions, inferential methods may include t-tests, chi-square tests, correlation or regression.</p><h3>Qualitative data</h3><p>Become familiar with the data, develop codes, group codes into categories or themes, review interpretations and support claims with appropriate evidence. Reflexivity and a transparent audit trail matter.</p><h3>Tools to learn</h3><p>SPSS can support statistical analysis. MAXQDA can support qualitative and mixed-methods data organisation and analysis. Software does not replace methodological reasoning.</p><h3>Before you analyse</h3><p>Match the analysis to each research question, understand assumptions, document decisions and avoid claiming causation from designs that cannot establish it.</p></div></section></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
